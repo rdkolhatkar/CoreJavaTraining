@@ -1,4 +1,4 @@
-package com.java.training;
+package com.training;
 
 import java.util.Scanner;
 
@@ -21,6 +21,8 @@ public class FibonacciSeries {
 
     public static void main(String args[])
     {
+        System.out.println("Please enter the position (order) of the Fibonacci number you want to find:");
+
         Scanner scnr = new Scanner(System.in);
         int N = scnr.nextInt();
         int first = 0; // first fibonacci number
