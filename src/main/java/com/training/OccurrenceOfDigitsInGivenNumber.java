@@ -1,7 +1,8 @@
 package com.training;
 import java.util.Scanner;
 /**
- * Calculate how many times a digit D occurs in the number N. One has to ask the user to give the values of N and D.
+ * Calculate how many times a digit D occurs in the number N.
+ * One has to ask the user to give the values of N and D.
  */
 public class OccurrenceOfDigitsInGivenNumber {
     // method for counting the number of digits in number n
