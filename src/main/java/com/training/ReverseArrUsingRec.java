@@ -18,7 +18,6 @@ public class ReverseArrUsingRec {
     // in the reverse order
         revArr(arr, size, i + 1);
         System.out.print(arr[i] + " ");
-
     }
 
     // main method
