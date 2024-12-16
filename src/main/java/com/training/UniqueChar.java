@@ -60,7 +60,5 @@ public class UniqueChar {
                 System.out.print(s.charAt(i) + " ");
             }
         }
-
-
     }
 }
