@@ -39,7 +39,6 @@ public class UniqueChar {
         // returning the resultant string
         return str;
     }
-
     // main method
     public static void main(String argvs[])
     {
