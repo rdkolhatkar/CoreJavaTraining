@@ -25,7 +25,6 @@ public class UniqueChar {
             char ch = inputStr.charAt(j);
             arr[ch - 'a'] = arr[ch - 'a'] + 1;
         }
-
         String str = "";
         for(int i = 0; i < 256; i++)
         {
