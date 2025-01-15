@@ -67,7 +67,7 @@ public class AddBinaryStrings
             resultantStr  = digit + resultantStr;
         }
 
-// returning the final string
+    // returning the final string
         return resultantStr;
     }
 
