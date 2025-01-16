@@ -87,7 +87,7 @@ public class CheckPalindrome
     public static void main(String argvs[])
     {
 
-// taking user input
+    // taking user input
         Scanner scnr = new Scanner(System.in);
         String sentnce = scnr.nextLine();
 
