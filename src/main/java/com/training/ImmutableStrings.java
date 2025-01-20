@@ -25,8 +25,8 @@ public class ImmutableStrings {
         }
         else
         {
-    // if the control reaches here, then it means == operator
-    // has returned a false value.
+        // if the control reaches here, then it means == operator
+        // has returned a false value.
             System.out.println("Strings are immutable.");
         }
 
