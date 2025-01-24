@@ -14,8 +14,8 @@ public class ReverseArrUsingRec {
             return;
         }
 
-    // recursively printing the input array
-    // in the reverse order
+        // recursively printing the input array
+        // in the reverse order
         revArr(arr, size, i + 1);
         System.out.print(arr[i] + " ");
     }
