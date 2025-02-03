@@ -29,7 +29,7 @@ public class ReverseArrUsingRec {
 
         int intArr[] = new int[n];
 
-    // user to enter the elements
+        // user to enter the elements
         for(int i = 0; i < n; i++)
         {
             intArr[i] = scn.nextInt();
