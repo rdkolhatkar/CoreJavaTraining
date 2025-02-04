@@ -56,7 +56,7 @@ public class StringAnagrams
     // main method
     public static void main(String argvs[])
     {
-// taking user input
+    // taking user input
         Scanner scnr = new Scanner(System.in);
         String a1 = scnr.nextLine();
         String a2 = scnr.nextLine();
