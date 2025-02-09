@@ -1,5 +1,15 @@
 package com.training;
 
+/**
+ * Create a user-defined exception and demonstrate its working
+ * (when it raises an exception) with the help of a Java program.
+ * In the following program, A class called LowBalanceExcptn is created for the bank.
+ * Therefore, when a person creates a bank account,
+ * the minimum balance the person should maintain Rs. 7000.
+ * Therefore, when the bank balance becomes less than Rs. 7000,
+ * the exception is raised. The illustration of the same is mentioned below.
+ */
+
 public class BankBlanceUserDefinedException {
     // main method
     public static void main(String[] argvs)
