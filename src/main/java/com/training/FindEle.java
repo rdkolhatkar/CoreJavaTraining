@@ -57,7 +57,7 @@ public class FindEle {
 
         System.out.println("Enter elements of the input array");
 
-// input the array
+        // input the array
         for(int k = 0; k < num; k++)
         {
             intArr[k] = scnr.nextInt();
