@@ -18,7 +18,7 @@ public class StringAnagrams
 {
 
     // the following method checks whether string a1 and a2 are anagrams
-// or not. If yes, a true value is returned. Otherwise, a false value is returned
+    // or not. If yes, a true value is returned. Otherwise, a false value is returned
     public static boolean isStringsAnagram(String a1, String a2)
     {
 // size is not the same. Hence, a false value is returned
