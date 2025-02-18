@@ -9,7 +9,7 @@ import java.util.*;
 
 public class CountVowelConst {
     // the following method checks whether the
-// character chr is a vowel or a consonant
+    // character chr is a vowel or a consonant
     public static boolean isVowelChar(char chr)
     {
         // an array that contains only vowels
