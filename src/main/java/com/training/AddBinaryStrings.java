@@ -74,7 +74,7 @@ public class AddBinaryStrings
     // main method
     public static void main(String argvs[])
     {
-// taking input from the user
+    // taking input from the user
         Scanner scnr = new Scanner(System.in);
         String s1 = scnr.nextLine();
         String s2 = scnr.nextLine();
