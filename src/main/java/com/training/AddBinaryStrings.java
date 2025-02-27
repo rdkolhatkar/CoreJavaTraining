@@ -34,7 +34,7 @@ public class AddBinaryStrings
             return "0";
         }
 
-// size of the input strings
+        // size of the input strings
         int p = s1.length() - 1;
         int q = s2.length() - 1;
 
