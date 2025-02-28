@@ -40,7 +40,7 @@ public class AddBinaryStrings
 
         int cary = 0;
 
-// loop that does the binary addition
+    // loop that does the binary addition
 // by addiing digits from right to left
         while(p >= 0 || q >= 0 || cary > 0)
         {
