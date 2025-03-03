@@ -21,7 +21,7 @@ public class StringAnagrams
     // or not. If yes, a true value is returned. Otherwise, a false value is returned
     public static boolean isStringsAnagram(String a1, String a2)
     {
-// size is not the same. Hence, a false value is returned
+    // size is not the same. Hence, a false value is returned
         if(a1.length() != a2.length())
         {
             return false;
