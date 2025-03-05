@@ -27,8 +27,8 @@ public class StringAnagrams
             return false;
         }
 
-// hashmap for storing the frequency of occurrence of characters
-// present in the string s1
+    // hashmap for storing the frequency of occurrence of characters
+    // present in the string s1
         HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();
 
         for(int g = 0; g < a1.length(); g++)
