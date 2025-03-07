@@ -74,7 +74,7 @@ public class SortedArrayIndex {
 
         System.out.println(" \n ");
 
-// input array
+    // input array
         int[] inputArr1 = {-3, 5, 24, 40, 51, 80, 89, 97};
         size = inputArr1.length;
 
