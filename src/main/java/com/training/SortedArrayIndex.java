@@ -56,7 +56,7 @@ public class SortedArrayIndex {
     // main method
     public static void main(String argvs[])
     {
-// input array
+    // input array
         int[] inputArr = {2, 6, 9, 13, 24, 35, 78, 90, 99};
         int size = inputArr.length;
 
