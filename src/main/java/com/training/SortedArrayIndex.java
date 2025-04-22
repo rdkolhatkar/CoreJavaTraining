@@ -20,7 +20,7 @@ public class SortedArrayIndex {
         int l = 0;
         int h = numsArr.length - 1;
 
-// loop that applies the binary search
+    // loop that applies the binary search
         while(l <= h)
         {
             int middle = l + (h - l) / 2;
