@@ -16,4 +16,5 @@ public class ReverseTheInteger {
         long number = 123456789;
         System.out.println(new StringBuffer(String.valueOf(number)).reverse());
     }
+
 }
