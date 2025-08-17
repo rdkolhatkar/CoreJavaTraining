@@ -1,6 +1,7 @@
 package com.learning;
 
 import java.sql.*;
+
 public class JdbcJavaConnection {
 
     /*
@@ -37,5 +38,17 @@ public class JdbcJavaConnection {
         String password = "Ratanlord@1409";
         Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
         System.out.println("Connection established successfully!");
+        // Create SQL Statement Using Java
+        Statement statement = connection.createStatement();
+        String query = "select * from employeedetails;";
+        // Execute the query & store the data into ResultSet
+        ResultSet resultSet = statement.executeQuery(query);
+        System.out.println(resultSet.next()); //resultSet.next() -> this will give us boolean value, if this returns true then we can identify if our query is executed successfully or not
+        resultSet.next();
+        String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
+        System.out.println("Employee Name is " + employeeName);
+        // Closing the connection
+        connection.close();
+        System.out.println("Connection closed successfully!");
     }
 }
