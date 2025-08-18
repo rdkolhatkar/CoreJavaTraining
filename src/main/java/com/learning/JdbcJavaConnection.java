@@ -43,12 +43,23 @@ public class JdbcJavaConnection {
         String query = "select * from employeedetails;";
         // Execute the query & store the data into ResultSet
         ResultSet resultSet = statement.executeQuery(query);
+        /*
         System.out.println(resultSet.next()); //resultSet.next() -> this will give us boolean value, if this returns true then we can identify if our query is executed successfully or not
         resultSet.next();
         String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
         System.out.println("Employee Name is " + employeeName);
+        */
+        // Fetching all the rows
+        while (resultSet.next()) {
+            // Retrieving the data present in the table
+            String employeeId = resultSet.getString("employee_id"); // Retrieving the data present in the column called "employee_id"
+            String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
+            String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
+            System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
+        }
         // Closing the connection
         connection.close();
         System.out.println("Connection closed successfully!");
+
     }
 }
