@@ -40,7 +40,14 @@ public class JdbcJavaConnection {
         System.out.println("Connection established successfully!");
         // Create SQL Statement Using Java
         Statement statement = connection.createStatement();
+        // Selecting the data from the table
         String query = "select * from employeedetails;";
+        // Inserting data into the table
+        String insertQuery = "INSERT INTO employeedetails (employee_id, employee_name, job_role) VALUES ('E004', 'John Doe', 'Software Engineer')";
+        // Updating data in the table
+        String updateQuery = "UPDATE employeedetails SET employee_name = 'Jane Doe' WHERE employee_id = 'E004'";
+        // Deleting data from the table
+        String deleteQuery = "DELETE FROM employeedetails WHERE employee_id = 'E004'";
         // Execute the query & store the data into ResultSet
         ResultSet resultSet = statement.executeQuery(query);
         /*
@@ -57,6 +64,72 @@ public class JdbcJavaConnection {
             String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
             System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
         }
+        // When we are not sure about the number of rows and columns in the table, we can use the following code to get the metadata of the ResultSet
+        // Also when we have to insert data into the table, we can use the following code to get the metadata of the table
+        // Crud operations can be performed using the following code
+        ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+        int columnCount = resultSetMetaData.getColumnCount(); // Getting the number of columns in the table
+        System.out.println("Number of columns in the table: " + columnCount);
+        for (int i = 1; i <= columnCount; i++) {
+            String columnName = resultSetMetaData.getColumnName(i); // Getting the name of the column
+            String columnType = resultSetMetaData.getColumnTypeName(i); // Getting the type of the column
+            System.out.println("Column " + i + ": " + columnName + " (" + columnType + ")");
+        }
+        // Inserting data into the table
+        int rowsAffected = statement.executeUpdate(insertQuery);
+        if (rowsAffected > 0) {
+            System.out.println("Data inserted successfully!");
+        } else {
+            System.out.println("Data insertion failed!");
+        }
+        // Executing the query to check if the data is inserted successfully
+        resultSet = statement.executeQuery(query);
+        // Fetching all the rows after insertion
+        while (resultSet.next()) {
+            // Retrieving the data present in the table
+            String employeeId = resultSet.getString("employee_id"); // Retrieving the data present in the column called "employee_id"
+            String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
+            String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
+            System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
+        }
+        // Run the update query to update the existing data in the table
+        rowsAffected = statement.executeUpdate(updateQuery);
+        if (rowsAffected > 0) {
+            System.out.println("Data updated successfully!");
+        } else {
+            System.out.println("Data update failed!");
+        }
+        // Executing the query to check if the data is updated successfully
+        resultSet = statement.executeQuery(query);
+        // Fetching all the rows after update
+        while (resultSet.next()) {
+            // Retrieving the data present in the table
+            String employeeId = resultSet.getString("employee_id"); // Retrieving the data present in the column called "employee_id"
+            String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
+            String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
+            System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
+        }
+        // Delete data from the table
+        rowsAffected = statement.executeUpdate(deleteQuery);
+        if (rowsAffected > 0) {
+            System.out.println("Data deleted successfully!");
+        } else {
+            System.out.println("Data deletion failed!");
+        }
+        // Executing the query to check if the data is deleted successfully
+        resultSet = statement.executeQuery(query);
+        // Fetching all the rows after deletion
+        while (resultSet.next()) {
+            // Retrieving the data present in the table
+            String employeeId = resultSet.getString("employee_id"); // Retrieving the data present in the column called "employee_id"
+            String employeeName = resultSet.getString("employee_name"); // Retrieving the data present in the column called "employee_name"
+            String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
+            System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
+        }
+        // Closing the ResultSet and Statement objects
+        resultSet.close();
+        statement.close();
+        System.out.println("ResultSet and Statement closed successfully!");
         // Closing the connection
         connection.close();
         System.out.println("Connection closed successfully!");
