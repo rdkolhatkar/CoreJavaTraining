@@ -126,6 +126,19 @@ public class JdbcJavaConnection {
             String jobeRole = resultSet.getString("job_role"); // Retrieving the data present in the column called "job_role"
             System.out.println("Employee ID: " + employeeId + ", Employee Name: " + employeeName + ", Job Role: " + jobeRole);
         }
+        // Cashing the SQL Query
+        String employee_id = "E001"; // Example employee_id to be used in the prepared statement
+        String employee_name = "Ratan Kumar"; // Example employee_name to be used in the prepared statement
+        String job_role = "Software Engineer"; // Example job_role to be used in the prepared statement
+        // Cashing the SQL Query is not directly supported in JDBC, but you can use a caching mechanism like Ehcache or Caffeine to cache the results of the query.
+        // Building a prepared statement with Java and JDBC
+        String newInsertQuery = "INSERT INTO employeedetails (employee_id, employee_name, job_role) VALUES (?,?,?)";
+        // PreparedStatement Implementation
+        PreparedStatement preparedStatement = connection.prepareStatement(newInsertQuery);
+        preparedStatement.setString(1, employee_id); // Setting the first parameter in the prepared statement
+        preparedStatement.setString(2, employee_name); // Setting the second parameter in the prepared statement
+        preparedStatement.setString(3, job_role); // Setting the third parameter in the prepared statement
+        // For integer values, you can use preparedStatement.setInt(1, integerValue);
         // Closing the ResultSet and Statement objects
         resultSet.close();
         statement.close();
