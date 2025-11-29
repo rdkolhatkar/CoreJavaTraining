@@ -3,6 +3,7 @@ package com.practice;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.stream.Collectors;
 
 public class ArrayListIteration {
@@ -32,5 +33,36 @@ public class ArrayListIteration {
         while (it.hasNext()){
             System.out.println(it.next().toUpperCase());
         }
+        System.out.println("*******************************************************************************");
+
+        // Now we will use Java 8 forEachRemaining() method with lambada expression
+        Iterator<String> ite = arrayList.iterator();
+        ite.forEachRemaining(s -> {
+            System.out.println(s.toLowerCase());
+        });
+        System.out.println("*******************************************************************************");
+
+        // Iterate using Enhanced for Loop
+        for(String k : arrayList){
+            System.out.println("The length of String "+k+" is : "+k.length());
+        }
+        System.out.println("*******************************************************************************");
+
+        // Iterate using simple for loop order or index
+        for(int i =0; i<arrayList.size(); i++){
+            System.out.println(arrayList.get(i).chars());
+        }
+        System.out.println("*******************************************************************************");
+
+        // Using List Iterator to traverse in both the directions
+        // In this we will first call the last element of the list and then we will iterate back to the first element
+
+        ListIterator<String> listIterator = arrayList.listIterator(arrayList.size());
+        while (listIterator.hasPrevious()){
+            String previousValue = listIterator.previous();
+            System.out.println(previousValue);
+        }
+
     }
+
 }
