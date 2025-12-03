@@ -7,7 +7,7 @@ public class FindDuplicateWordsInString {
 
     // Remove punctuation marks
     public static String cleanString(String inputOriginalString) {
-        String newCleanString = inputOriginalString.replaceAll("[^\\w\\s]", "");
+        String newCleanString = inputOriginalString.replaceAll(",", "");
         System.out.println("New String without punctuation is : " + newCleanString);
         return newCleanString;
     }
@@ -15,7 +15,7 @@ public class FindDuplicateWordsInString {
     public static void findDuplicateWords(String inputString) {
 
         // Convert to lower case and split into words
-        String[] words = cleanString(inputString).toLowerCase().split("\\s+");
+        String[] words = cleanString(inputString).toLowerCase().split(" ");
 
         Map<String, Integer> wordCount = new HashMap<>();
 
