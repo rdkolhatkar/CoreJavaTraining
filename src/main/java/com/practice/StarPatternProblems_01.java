@@ -1,6 +1,6 @@
 package com.practice;
 
-public class StarPatternProblems {
+public class StarPatternProblems_01 {
     public static void main(String[] args) {
     /*
       ===================== PROBLEM STATEMENT ONE =====================
