@@ -12,29 +12,38 @@ Answer: In Java, strings are immutable, meaning their values cannot be changed o
 public class ImmutableString {
     public static void main(String[] args) {
 
-        // Both s1 and s2 refer to the same
+        // Both s1 and s2 refer to the same object
         // string literal in the String Pool
         String s1 = "Hello";
         String s2 = "Hello";
 
         // true, both point to the same object in String Pool
-        System.out.println("s1 == s2: " + (s1 == s2));
+        System.out.println("s1 == s2: " + (s1 == s2)); // true
 
         // Concatenation creates a new String
         // object in heap, s1 now points to it
-        s1 = s1.concat(" World");
+        s1 = s1.concat(" World"); // Here s1 will become s1: Hello World
 
-        System.out.println("s1: " + s1);
-        System.out.println("s2: " + s2);
-        System.out.println("s1 == s2: " + (s1 == s2));
+        System.out.println("s1: " + s1); // This will print Hello World
+        System.out.println("s2: " + s2); // This will print World
+        System.out.println("s1 == s2: " + (s1 == s2)); // Now it will be false because s1 is now Hello World
 
         // Creating a string using new keyword stores it in the heap
         String s3 = new String("Hello");
 
         // false, because s2 is from String Pool and s3 is from heap
-        System.out.println("s2 == s3: " + (s2 == s3));
+        System.out.println("s2 == s3: " + (s2 == s3)); // This will be false because s3 is instantiated with "new" keyword
 
         // true, because equals() compares content
-        System.out.println("s2.equals(s3): " + s2.equals(s3));
+        System.out.println("s2.equals(s3): " + s2.equals(s3)); // This will be true because equals() compares the actual string value which is "Hello"
+
+        String x = "abc";
+        String y = "def";
+        String z = "abc";
+        String j = x.concat(y);
+        System.out.println(x); // Here x will still be abc
+        System.out.println(j); // Here it will print abcdef
+        // if we assign a String variable to x.concat(y) then new String will be as abcdef
+        // As String value of x and z is "abc" so in this case only one object will be created in String constant pool
     }
 }

@@ -28,6 +28,7 @@ public class FindDuplicateElementsInArrayPart_1 {
         Map<String, Integer> storeMap = new HashMap<String, Integer>();
         for(String name : names){
             Integer count = storeMap.get(name);
+            System.out.println("Keys from storeMap : "+storeMap.get(name));
             if(count == null){
                 storeMap.put(name, 1);
             } else{
