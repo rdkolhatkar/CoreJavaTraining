@@ -22,6 +22,7 @@
         <snowflake.jdbc.version>3.13.2</snowflake.jdbc.version>
         <jackson.version>2.17.2</jackson.version>
         <apache.commons.csv.version>1.11.0</apache.commons.csv.version>
+        <apache.commons.lang.version>3.20.0</apache.commons.lang.version>
 
     </properties>
 
@@ -86,11 +87,16 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-csv</artifactId>
-                <version>${apache.commons.csv.version}</version>
-            </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${apache.commons.csv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons.lang.version}</version>
+        </dependency>
 
     </dependencies>
 

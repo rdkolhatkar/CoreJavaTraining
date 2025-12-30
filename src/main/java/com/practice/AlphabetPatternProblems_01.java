@@ -1,6 +1,6 @@
 package com.practice;
 
-public class AlphabetPatternProblems {
+public class AlphabetPatternProblems_01 {
     public static void main(String[] args) {
 /*
     Question:
