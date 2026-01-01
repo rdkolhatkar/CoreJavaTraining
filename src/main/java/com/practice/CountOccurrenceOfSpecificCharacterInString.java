@@ -71,5 +71,12 @@ public class CountOccurrenceOfSpecificCharacterInString {
         String strFour = "The wind remembers stories the mountains never forget";
         int value = StringUtils.countMatches(strFour, 'm');
         System.out.println("Occurrence of character 'm' in the given String is : "+ value);
+        System.out.println("************************************************");
+        // 7th Solution is using Java Streams
+        long countValue = str.chars().filter(e -> (char)e == 'a').count();
+        System.out.println("Count of character 'a' in given String is : "+countValue);
+        // Counting the occurrence of two characters in given String
+        long combinedCountOfTwoCharacters = str.chars().filter(e -> (char)e == 'a' || (char)e == 'o').count();
+        System.out.println("Combined Count of Character 'a' and Character 's' in the given String is : "+combinedCountOfTwoCharacters);
     }
 }

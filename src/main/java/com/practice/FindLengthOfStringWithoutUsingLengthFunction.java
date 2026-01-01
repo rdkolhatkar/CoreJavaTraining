@@ -41,5 +41,43 @@ public class FindLengthOfStringWithoutUsingLengthFunction {
         }
         System.out.println("The length of String 'str' using 'enhanced for loop' method is : "+counter);
         System.out.println("*********************************************************************");
+        // 8th Solution is using the While loop
+        // We will create a separate method using while loop
+        System.out.println("The length of String 'str' using 'While loop' method is : "+getLengthUsingWhileLoop(str));
+        System.out.println("*********************************************************************");
+        // 9th Solution is using getBytes method
+        System.out.println("The length of String 'str' using 'string.getBytes()' method is : "+getLengthWithBytesMethod(str));
+        System.out.println("*********************************************************************");
+        // 10th Solution is using array method
+        System.out.println("The length of String 'str' using 'Array' method is : "+getStringLenghthWithArray(str));
+    }
+    public static int getLengthUsingWhileLoop(String string){
+        int i = 0;
+        try{
+            while (true){
+                string.charAt(i);
+                i++;
+            }
+        }catch(IndexOutOfBoundsException e){
+            return i;
+        }
+    }
+    public static int getLengthWithBytesMethod(String string){
+        int l1 = 0;
+        try {
+            l1 = string.getBytes("UTF-16BE").length/2;
+            return l1;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return l1;
+    }
+    public static int getStringLenghthWithArray(String string){
+        String[] strArray = string.split("");
+        int count = 0;
+        for(String s : strArray){
+            count += s.toCharArray().length;
+        }
+        return count;
     }
 }
