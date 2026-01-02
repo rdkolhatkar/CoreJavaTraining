@@ -42,7 +42,7 @@ public class FindVowelsWithinTheGivenString {
         // 3rd solution is using google guava library
         String st = "Java Examples";
         // CharMatcher is imported from "com.google.common.base"
-        int myVowelCount = CharMatcher.anyOf("aeiou").countIn(st);
+        int myVowelCount = CharMatcher.anyOf("aeiouAEIOU").countIn(st);
         System.out.println("Vowel count using the google guava library method is : "+myVowelCount);
     }
 }
