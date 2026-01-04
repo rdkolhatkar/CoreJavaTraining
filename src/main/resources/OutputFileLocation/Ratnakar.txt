@@ -1,1 +1,22 @@
 My name is Ratnakar Digvijay Kolhatkar and I am from Pune, Maharashtra, India
+---------------------------------------------------------------------------------------
+Python
+JavaScript
+TypeScript
+Java
+C#
+Go (Golang)
+Rust
+Kotlin
+Swift
+C++
+C
+SQL
+PHP
+R
+Dart
+Scala
+Ruby
+MATLAB
+Groovy
+Bash / Shell scripting
