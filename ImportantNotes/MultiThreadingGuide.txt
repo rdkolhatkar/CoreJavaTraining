@@ -1,0 +1,50 @@
+1) What is CPU (Central Processing Unit)?
+-> Often referred as brain of computer, is responsible for executing instructions from programs.
+   It performs basic arithmatic, logic, control and input/output operations specified by instructions
+   Examples: A modern CPU like the Intel Core i7 or AMD Ryzen 7
+-----------------------------------------------------------------------------------------------------------------
+2) What is core?
+-> A core is an individual processing unit within a CPU.
+   Modern CPUs can have multiple cores, allowing them to perform multiple tasks simultaneously.
+   A quad-core processor has four cores, allowing it to perform four tasks simultaneously.
+   For instance, one core could handle your web browser, another your music player, another a download manager and another a background system update.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+3) What is a program?
+-> A program is a set of instructions written in a programming language that tells the computer how to perform a specific task
+   Example, Microsoft Word is a program that allows users to create and edit documents.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4) What is a process?
+-> A process is an instance of a program that is being executed. When a program runs, the operating system creates a process to manage its execution.
+   Example, When we open Microsoft Word, it becomes a process in the operating system.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5) What is Thread?
+-> A thread is the smallest unit of execution within a process. A process can have multiple threads, which share the same resources but can run independently.
+   Example: A web browser like Google Chrome might use multiple threads for different tabs, with each tab running as a separate thread.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6) What is Multitasking?
+-> Multitasking allows an operating system to run multiple processes simultaneously. On single-core CPUs, this is done through time-sharing, rapidly switching between tasks.
+   On multi-core CPUs, true parallel execution occurs, with tasks distributed accross cores. The OS scheduler balances the load, ensuring efficient and responsive system performance.
+   Multitasking utilizes the capabilities of a CPU and its core. When an operating system performs multitasking, it can assign different tasks to different cores.
+   This is more efficient than assigning all tasks to a single core.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7) What is Multithreading?
+-> Multithreading refers to the ability to execute multiple threads within a single process concurrently.
+   Multithreading enhances the efficiency of multitasking by breaking down individual tasks into smaller sub-tasks or threads.
+   These threads can be processed simultaneously, making better use of the CPU's capabilities.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Note: I) In a single-core system, both threads and processes are managed by the OS schedular through time slicing and context switching to create the illusion of simultaneous execution.
+      II) In a multi-core system, Both threads and processes can run in true parallel on different cores, with OS schedular distributing tasks across the cores to optimize performance.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8) What is Time Slicing
+-> Time Slicing divides CPU time into smaller intervals called time slices or quanta.
+   OS Schedular allocates these time slices to different processes and threads, ensuring each gets a fair share of CPU time.
+   This prevents any single process or thread from monopolizing the CPU, improving responsiveness and enabling concurrent execution.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9) What is context switching?
+-> Context switching is the process of saving the state of a currenlty running process or thread and loading the state of the next one to be executed.
+   When a process or thread's time slice expires, the OS schedular performs a context switch to move to the CPU's focus to another process or thread.
+   This allows multiple processes and threads to share the CPU, giving the appearance of simultaneous execution on a single CPU (or single processor/core).
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10) What is Multithreading in Java?
+-> In Java, multithreading is the concurrent execution of two or more threads to maximize the utilization of the CPU.
+   Java's multithreading capabilities are part of the 'java.lang' package making it easy to implement concurrent execution.

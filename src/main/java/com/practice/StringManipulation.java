@@ -54,5 +54,17 @@ public class StringManipulation {
         System.out.println("Addition of (Strings) + (integers) "+(a+b+x+y)); // HelloWorld100200
         System.out.println("Addition of (integers) + (String) "+(x+y+a+b)); // 300HelloWorld
         System.out.println("Addition is "+(x+y+(a+b))); // 300HelloWorld
+        // Remove all Spaces from the String
+        String input = "my test case in java";
+        // Remove all spaces
+        String result = input.replace(" ", "");
+        System.out.println("Original String: " + input);
+        System.out.println("After Removing Spaces: " + result);
+        String resultTwo = input.replaceAll("\\s+", "");
+        System.out.println("After Removing All Spaces: " + resultTwo);
+        /*
+            replace() → removes only space characters
+            replaceAll() → removes all kinds of whitespace using regex
+         */
     }
 }
