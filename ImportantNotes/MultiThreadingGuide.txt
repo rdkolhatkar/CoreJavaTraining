@@ -23,7 +23,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 6) What is Multitasking?
 -> Multitasking allows an operating system to run multiple processes simultaneously. On single-core CPUs, this is done through time-sharing, rapidly switching between tasks.
-   On multi-core CPUs, true parallel execution occurs, with tasks distributed accross cores. The OS scheduler balances the load, ensuring efficient and responsive system performance.
+   On multi-core CPUs, true parallel execution occurs, with tasks distributed across cores. The OS scheduler balances the load, ensuring efficient and responsive system performance.
    Multitasking utilizes the capabilities of a CPU and its core. When an operating system performs multitasking, it can assign different tasks to different cores.
    This is more efficient than assigning all tasks to a single core.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,10 +41,21 @@ Note: I) In a single-core system, both threads and processes are managed by the 
    This prevents any single process or thread from monopolizing the CPU, improving responsiveness and enabling concurrent execution.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 9) What is context switching?
--> Context switching is the process of saving the state of a currenlty running process or thread and loading the state of the next one to be executed.
+-> Context switching is the process of saving the state of a currently running process or thread and loading the state of the next one to be executed.
    When a process or thread's time slice expires, the OS schedular performs a context switch to move to the CPU's focus to another process or thread.
    This allows multiple processes and threads to share the CPU, giving the appearance of simultaneous execution on a single CPU (or single processor/core).
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 10) What is Multithreading in Java?
 -> In Java, multithreading is the concurrent execution of two or more threads to maximize the utilization of the CPU.
    Java's multithreading capabilities are part of the 'java.lang' package making it easy to implement concurrent execution.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Note: I) In single-core environment, Java's multithreading is managed by the JVM and the OS, which switch between threads to give the illusion of concurrency.
+         The threads share the single core, and time-slicing is used to manage thread execution.
+      II) In multi-core environment, Java's multithreading can take full advantage of the available cores.
+          The JVM can distribute threads across multiple cores allowing true parallel execution of threads.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Note: I) A thread is a lightweight process, the smallest unit of processing. Java supports multithreading through its 'java.lang.Thread' class and
+         the 'java.lang.Runnable' interface
+      II) When a Java program starts, one thread begins running immediately, which is called the main thread. This thread is responsible for executing the main method of a program.
+      III) To create a new thread in Java, you have to either extend the Thread class or implement the Runnable interface.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
