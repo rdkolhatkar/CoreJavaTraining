@@ -59,3 +59,15 @@ Note: I) A thread is a lightweight process, the smallest unit of processing. Jav
       II) When a Java program starts, one thread begins running immediately, which is called the main thread. This thread is responsible for executing the main method of a program.
       III) To create a new thread in Java, you have to either extend the Thread class or implement the Runnable interface.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11) Explain Thread Lifecycle
+-> The lifecycle of a thread in java consists of several states, which a thread can move through during its execution.
+   Below are the States of thread.
+   A) New: A thread is in this state when it is created but not yet started.
+   B) Runnable: After the start method is called, the thread becomes runnable. It's ready to run and is waiting for CPU time.
+   C) Running: The thread is in this state when it is executing.
+   D) Blocked/Waiting: A thread is in this state when it is waiting for resource or for another thread to perform an action.
+   E) Terminated: A thread is in this state when it has finished executing.
+
+
+
+

@@ -4,6 +4,12 @@ public class MultiThreadingConceptInJava {
     public static void main(String[] args) {
         ThreadOne threadOne = new ThreadOne(); // Creating the object of ThreadOne class and invoking the start() method.
         threadOne.start();
+        // Unlike first "ThreadOne" object we cannot create the "ThreadTwo" object because ThreadTwo class is not a child of Thread Class.
+        // ThreadTwo class implements 'Runnable' interface.So we cannot execute the start method directly.
+        // So we have to create the Object of Thread class and inside that Object we have to pass the object of "ThreadTwo"
+        ThreadTwo threadTwo = new ThreadTwo();
+        Thread thread = new Thread(threadTwo);
+        thread.start();
         System.out.println("Hello World !");
         // Printing the name of current running thread
         System.out.println(Thread.currentThread().getName()); // Output of this line is : main
@@ -27,6 +33,8 @@ public class MultiThreadingConceptInJava {
         -> This is a compile-time error, not a runtime error.
          */
         // As "ThreadOne" and "MultiThreadingConceptInJava" are two independent processes,
-        // "Good Morning !" and "My name is Ratnakar" will get printed randomly in the console
+        // "Good Morning !" and "My name is Ratnakar" will get printed randomly in the console.
+        // Another way to create a new thread is, we have to implement the Runnable interface.
+        // We will create the "ThreadTwo" class which implements this runnable interface.
     }
 }
