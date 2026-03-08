@@ -67,6 +67,15 @@ Note: I) A thread is a lightweight process, the smallest unit of processing. Jav
    C) Running: The thread is in this state when it is executing.
    D) Blocked/Waiting: A thread is in this state when it is waiting for resource or for another thread to perform an action.
    E) Terminated: A thread is in this state when it has finished executing.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12) When To Use 'Thread' class and When To Use 'Runnable' interface in our Java App?
+-> I) Let's say we have two classes in Java, class 'A' and class 'B'. Here Class 'A' is the child class of 'B'.
+      That means class 'A' extends class 'B' and now in this case we want to create a new Thread of class 'A', Then in that case,
+      We cannot extend class 'A' with 'Thread' class because in Java Multiple inheritance is not possible, which means our class 'A'
+      cannot extend class 'B' and 'Thread' class at same time. So in this case We have to use the 'Runnable' interface.
+   II) In this case we have to implement 'Runnable' interface with class 'B' and then We will be able to use all methods from 'Runnable' interface inside class 'A'
+       because class 'A' extends class 'B' i.e class 'A' is a Child of class 'B'
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
