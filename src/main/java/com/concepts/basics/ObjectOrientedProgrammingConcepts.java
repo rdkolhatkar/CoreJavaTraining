@@ -138,4 +138,8 @@ public class ObjectOrientedProgrammingConcepts {
  =================================================================================
 */
 
+/*
+    Encapsulation -> It is nothing but bundling of data and methods into a single unit
+*/
+
 }
