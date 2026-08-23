@@ -131,7 +131,7 @@ public class ObjectOrientedProgrammingConcepts {
  Shortcut to Remember:
 
  Encapsulation -> Data Hiding
- Abstraction   -> Hiding Implementation
+ Abstraction   -> Hiding Implementation details
  Inheritance   -> Code Reusability
  Polymorphism  -> One Interface, Many Forms
 
@@ -140,6 +140,7 @@ public class ObjectOrientedProgrammingConcepts {
 
 /*
     Encapsulation -> It is nothing but bundling of data and methods into a single unit
+    For encapsulation we have to declare our variables or fields as private using "private" access modifier & getter setters
 */
 
 }
