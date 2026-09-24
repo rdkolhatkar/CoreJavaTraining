@@ -111,6 +111,7 @@ public class ThreadMethods extends Thread{
         for(int i = 0; i <= 3; i++){
             System.out.println(i);
             System.out.println(Thread.currentThread().getName() + " - Priority: " + Thread.currentThread().getPriority() + "- count: " + i);
+            Thread.yield(); // This will give the chance to other threads to get executed in between the current thread
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -128,7 +129,15 @@ public class ThreadMethods extends Thread{
         t3.setPriority(Thread.MAX_PRIORITY); // JVM will always give priority to the High Priority Thread
         t1.start(); // When "start()" method executes then JVM will invoke "run()" method
         t2.start();
+        // Interrupting thread
+        t1.interrupt(); // It will stop t1 thread abruptly
         t3.start();
         t1.join(); // It will wait until t1 thread to finish.
+
+        // DAEMON THREADS -> These are the threads which run in backend of the software or more precisely it runs in background. JVM will not wait for DAEMON THREAD to get finished. If USER THREADS are completed then JVM will terminate the operations
+        t1.setDaemon(true);
+        t2.start();
+        System.out.println("Main Thread Or USER THREAD is Executed successfully .......");
+
     }
 }
