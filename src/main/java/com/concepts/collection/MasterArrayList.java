@@ -89,6 +89,5 @@ public class MasterArrayList {
         */
         // We can print list without using for-loop as List uses toString method in background
         System.out.println(integerArrayList); // Output:; [10, 20, 30, 600, 50]
-
     }
 }
