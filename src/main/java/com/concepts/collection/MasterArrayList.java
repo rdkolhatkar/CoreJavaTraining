@@ -16,6 +16,17 @@ public class MasterArrayList {
         -> Internally, the ArrayList is implemented as an array of Objects references. When you add elements to an ArrayList, you're essentially storing these elements in this internal array.
         -> When you create an ArrayList, it has an initial capacity (default is 10). The capacity refers to the size of the internal array that can hold elements before needing to resize.
 
+        Adding Elements in ArrayList
+        When we add an element to an ArrayList, the following steps occur:
+        -> Check Capacity: Before adding the new element, ArrayList checks if there is enough space in the internal Array (elementData). If the array is full, it needs to be resized.
+        -> Resize if Necessary: If the internal array is full, the ArrayList will create a new array with a larger capacity (usually 1.5 times the current capacity) and copy the elements from the old array to the new array.
+        -> Add the Element: The new element is then added to the internal array at the appropriate index, and the size is increased.
+
+        Resizing the Array:
+        -> Initial Capacity: By default, the initial capacity is 10. This means the internal array can hold 10 elements before it needs to grow.
+        -> Growth Factor: When the internal array is full, a new array is created with a size of 1.5 times the old array. This growth factor balances the memory efficiency and resizing cost.
+        -> Copying Elements: When resizing occurs, all elemets from the old array are copied to the new array, which is an O(n) operation, where n is the number of elements in the ArrayList.
+
     */
     public static void main(String[] args) {
         ArrayList arrayList = new ArrayList(); // ArrayList is a Generic class, we can specify the type of data explicitly
