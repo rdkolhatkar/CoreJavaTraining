@@ -1,6 +1,7 @@
 package com.concepts.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MasterArrayList {
@@ -25,7 +26,12 @@ public class MasterArrayList {
         Resizing the Array:
         -> Initial Capacity: By default, the initial capacity is 10. This means the internal array can hold 10 elements before it needs to grow.
         -> Growth Factor: When the internal array is full, a new array is created with a size of 1.5 times the old array. This growth factor balances the memory efficiency and resizing cost.
-        -> Copying Elements: When resizing occurs, all elemets from the old array are copied to the new array, which is an O(n) operation, where n is the number of elements in the ArrayList.
+        -> Copying Elements: When resizing occurs, all elements from the old array are copied to the new array, which is an O(n) operation, where n is the number of elements in the ArrayList.
+
+        Removing Elements:
+        -> Check Bounds: The ArrayList first checks if the index is within the valid range.
+        -> Remove the Element: The element is removed, and all elements to the right of the removed element are shifted one position to the left to fill the gap.
+        -> Reduce Size: The size is decremented by 1.
 
     */
     public static void main(String[] args) {
@@ -100,5 +106,35 @@ public class MasterArrayList {
         */
         // We can print list without using for-loop as List uses toString method in background
         System.out.println(integerArrayList); // Output:; [10, 20, 30, 600, 50]
+
+        // Reducing the Size of ArrayList using "trimToSize()" method.
+        integerArrayList.trimToSize();
+        System.out.println(integerArrayList.getClass().getName()); // Output:java.util.ArrayList
+
+        // Another way to create ArrayList
+        List<String> stringList = Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+        // ArrayList<String> = Arrays.asList("Monday", "Tuesday"); This is invalid syntax because ArrayList is implementation of List Interface.
+        System.out.println(stringList.getClass().getName()); // Output: java.util.Arrays$ArrayList
+
+        // Converting an Array to ArrayList
+        String[] basicStringArray = {"Monday", "Tuesday", "Wednesday"};
+        List<String> newStringList = Arrays.asList(basicStringArray);
+        System.out.println(newStringList.getClass().getName()); // Output: java.util.Arrays$ArrayList
+
+        // Important Note: Arrays.asList() => is a nested static class hence we cannot add anything inside it
+        /*
+        newStringList.add("Test"); => This will throw the Exception as :
+        Exception in thread "main" java.lang.UnsupportedOperationException
+        at java.base/java.util.AbstractList.add(AbstractList.java:155)
+        at java.base/java.util.AbstractList.add(AbstractList.java:113)
+        at com.concepts.collection.MasterArrayList.main(MasterArrayList.java:125)
+        */
+        // We cannot add or remove anything from Arrays.asList() but we can replace the existing value.
+        newStringList.set(1, "Friday"); // It will not throw any exception
+        System.out.println(newStringList.get(1));
+        // Arrays.asList() method only return the fixed size list.
+
+        // Another way to create a unmodifiable list is using
+//        List<>
     }
 }
