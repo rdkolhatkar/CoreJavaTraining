@@ -2,6 +2,7 @@ package com.concepts.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MasterArrayList {
@@ -133,8 +134,29 @@ public class MasterArrayList {
         newStringList.set(1, "Friday"); // It will not throw any exception
         System.out.println(newStringList.get(1));
         // Arrays.asList() method only return the fixed size list.
+        // To make the "newStringList" modifiable we need to perform below operation
+        List<String> listString = new ArrayList<>(newStringList);
+        listString.add("Mango");
+        System.out.println(listString); // Output: [Monday, Friday, Wednesday, Mango]
+        // Adding a value at specific index
+        listString.add(0, "Apple"); // Output: [Apple, Monday, Friday, Wednesday, Mango]
+
 
         // Another way to create a unmodifiable list is using
-//        List<>
+        List<Integer> integerList1 = List.of(1,2,3,4,5,6,7);
+        // This also return unmodifiable list.
+        List<Integer> flexiList = new ArrayList<>();
+        flexiList.addAll(integerList1);
+        System.out.println(flexiList); // Output: [1, 2, 3, 4, 5, 6, 7]
+        flexiList.remove(Integer.valueOf(1)); // Here we are using Integer.valueOf(1) because by default remove method will not be able to recognize the integer index value.
+        System.out.println(flexiList); // Removes the value at index 1, Output: [2, 3, 4, 5, 6, 7]
+        // Converting List to an Array
+        flexiList.toArray(new Integer[0]);
+
+        // Sorting the ArrayList
+        // Here we will use the Collection class to sort the ArrayList
+        List<Integer> integerList2 = new ArrayList<>(List.of(9, 2, 5, 4, 7, 6, 8, 1, 3));
+        Collections.sort(integerList2);
+        System.out.println(integerList2); // OutPut: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     }
 }
